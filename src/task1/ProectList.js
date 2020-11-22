@@ -5,7 +5,7 @@ function ProectList(props) {
   return (
     <div className="t1-proect-list">
       {proects.map((proect, i) =>
-        <img key={i} src={proect.img} alt={proect.category}></img>
+        <img key={i} className="t1-image" src={proect.img} alt={proect.category} width="300px"></img>
       )}
     </div>
   );
