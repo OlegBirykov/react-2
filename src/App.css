@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -28,6 +30,10 @@ button, img {
   font-size: 14px;
   color: gray;
   background-color: white;
+}
+
+.t1-button:hover {
+  background-color: orange;
 }
 
 .t1-selected {
@@ -68,3 +74,23 @@ button, img {
     column-count: 4;
   }
 }
+
+.task-2 {
+  margin: 50px 0;
+  min-width: 300px;
+  max-width: 1200px;
+}
+
+.t2-button {
+  display: block;
+  color: gray;
+  font-size: 40px;
+}
+
+.t2-button:hover {
+  background-color: orange;
+}
+
+
+
+
