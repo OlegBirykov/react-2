@@ -8,6 +8,7 @@ function CardsView(props) {
 
   return (
     <div className="t2-cards-view">
+      <p>{cards[0].name}</p>
     </div>
   );
 }
