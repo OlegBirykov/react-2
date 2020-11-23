@@ -6,10 +6,20 @@
   padding: 0;
   border: none;
   font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  color: black;
+  background-color: transparent;
+}
+
+body {
+  background-color: white;
 }
 
 button, img {
   display: block;
+}
+
+button:hover {
+  background-color: orange;  
 }
 
 .task-1 {
@@ -29,11 +39,6 @@ button, img {
   border: 1px solid gray;
   font-size: 14px;
   color: gray;
-  background-color: white;
-}
-
-.t1-button:hover {
-  background-color: orange;
 }
 
 .t1-selected {
@@ -81,16 +86,30 @@ button, img {
   max-width: 1200px;
 }
 
-.t2-button {
+.t2-toolbar-button {
   display: block;
-  color: gray;
+  margin: 20px 25px 20px auto;
   font-size: 40px;
+  color: gray;
 }
 
-.t2-button:hover {
-  background-color: orange;
+.t2-cards-view {
+  display: flex;
+  flex-wrap: wrap;
 }
 
+.t2-card {
+  width: 300px;
+  height: 300px;
+  background-size: 100% 100%;
+}
 
+.t2-item {
+  display: flex;
+}
 
-
+.t2-item-image {
+  width: 100px;
+  height: 100px;
+  background-size: 100% 100%;
+}

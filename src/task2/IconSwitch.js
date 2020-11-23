@@ -6,9 +6,9 @@ function IconSwitch(props) {
   return (
     <div className="t2-toolbar">
       {icon === "view_list" ? 
-        <button className="material-icons t2-button" onClick={onSwitch}>&#xe8ef;</button> : 
-        <button className="material-icons t2-button" onClick={onSwitch}>&#xe8f0;</button>
-      }     
+        <button className="material-icons t2-toolbar-button" onClick={onSwitch}>&#xe8ef;</button> : 
+        <button className="material-icons t2-toolbar-button" onClick={onSwitch}>&#xe8f0;</button>
+      } 
     </div>
   );
 }

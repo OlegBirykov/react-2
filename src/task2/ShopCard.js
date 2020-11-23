@@ -1,44 +1,27 @@
-import { useState } from 'react';
 import PropTypes from 'prop-types';
-import Toolbar from './Toolbar';
-import ProectList from './ProectList';
+import ProductModel from './data/ProductModel';
 
-function Portfolio(props) {
-  const { proects, filters } = props;
-
-  const [{ selected, proectList }, setSelected] = useState({ selected: "All", proectList: proects});
-
-  const selectFilter = (event) => {
-    setSelected(() => {
-      const filter = event.target.innerText;
-      return {
-        selected: filter,
-        proectList: proects.filter((proect) => filter === 'All' || filter === proect.category)
-      }
-    });
+function ShopCard(props) {
+  const { card } = props;
+  
+  const cardStyle = {
+    backgroundImage: 'url(' + card.img + ')'
   }
 
   return (
-    <div className="task-1">
-      <Toolbar 
-        filters={filters}
-        selected={selected} 
-        onSelectFilter={selectFilter}
-      />
-      <ProectList proects={proectList} />
+    <div className="t2-card" style={cardStyle}>
+      <h2 className="t2-card-name">{card.name}</h2>
+      <p className="t2-card-color">{card.color}</p>
+      <div className="t2-card-bottom">
+        <p className="t2-card-price">{'$'+card.price}</p>
+        <button className="t2-card-button">Add to cart</button>
+      </div>
     </div>
   );
 }
 
-Portfolio.propTypes = {
-  proects: PropTypes.arrayOf(
-    PropTypes.exact({
-      img: PropTypes.string,
-      category: PropTypes.string
-    })
-  ).isRequired,
-
-  filters: PropTypes.arrayOf(PropTypes.string).isRequired
+ShopCard.propTypes = {
+  card: PropTypes.instanceOf(ProductModel).isRequired
 }
 
-export default Portfolio;
+export default ShopCard;

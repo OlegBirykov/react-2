@@ -1,14 +1,13 @@
 import PropTypes from 'prop-types';
 import ProductModel from './data/ProductModel';
-//import ShopCard from './ShopCard';
+import ShopCard from './ShopCard';
 
 function CardsView(props) {
   const { cards } = props;
 
-
   return (
     <div className="t2-cards-view">
-      <p>{cards[0].name}</p>
+      {cards.map((card, i) => <ShopCard card={card} key={i} />)}
     </div>
   );
 }

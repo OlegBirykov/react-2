@@ -1,44 +1,26 @@
-import { useState } from 'react';
 import PropTypes from 'prop-types';
-import Toolbar from './Toolbar';
-import ProectList from './ProectList';
+import ProductModel from './data/ProductModel';
 
-function Portfolio(props) {
-  const { proects, filters } = props;
+function ShopItem(props) {
+  const { item } = props;
 
-  const [{ selected, proectList }, setSelected] = useState({ selected: "All", proectList: proects});
-
-  const selectFilter = (event) => {
-    setSelected(() => {
-      const filter = event.target.innerText;
-      return {
-        selected: filter,
-        proectList: proects.filter((proect) => filter === 'All' || filter === proect.category)
-      }
-    });
+  const imageStyle = {
+    backgroundImage: 'url(' + item.img + ')'
   }
-
+  
   return (
-    <div className="task-1">
-      <Toolbar 
-        filters={filters}
-        selected={selected} 
-        onSelectFilter={selectFilter}
-      />
-      <ProectList proects={proectList} />
+    <div className="t2-item">
+      <div className="t2-item-image" style={imageStyle}></div>
+      <h2 className="t2-item-name">{item.name}</h2>
+      <p className="t2-item-color">{item.color}</p>
+      <p className="t2-item-price">{'$'+item.price}</p>
+      <button className="t2-item-button">Add to cart</button>
     </div>
   );
 }
 
-Portfolio.propTypes = {
-  proects: PropTypes.arrayOf(
-    PropTypes.exact({
-      img: PropTypes.string,
-      category: PropTypes.string
-    })
-  ).isRequired,
-
-  filters: PropTypes.arrayOf(PropTypes.string).isRequired
+ShopItem.propTypes = {
+  item: PropTypes.instanceOf(ProductModel).isRequired
 }
 
-export default Portfolio;
+export default ShopItem;
